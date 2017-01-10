@@ -1,0 +1,12 @@
+<div ng-if="!list.isEmpty()"><h1>Menu items</h1>
+</div>
+
+    <table border="2px solid red" >
+       <tr ng-if="!list.isEmpty()">
+        <th>Name</th>  <th>shortName</th><th>Description</th><th>Removal option</th>
+         </tr>
+      <tr ng-repeat="item in list.found">
+    <td>{{item.name}}</td> <td>{{item.short_name}}</td><td> {{item.description}}</td>
+  <td>  <button ng-click="list.onRemove({index: $index});">Don't want this one!</button></td>
+  </tr>
+    </table>
